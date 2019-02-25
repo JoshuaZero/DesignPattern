@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DesignPattern"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/st007/local/mygit/DesignPattern/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/st007/local/mygit/DesignPattern/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/st007/local/mygit/DesignPattern/build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DesignPattern">
+				<Option output="/home/st007/local/mygit/DesignPattern/build/DesignPattern" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/st007/local/mygit/DesignPattern/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 DesignPattern"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DesignPattern/fast">
+				<Option output="/home/st007/local/mygit/DesignPattern/build/DesignPattern" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/st007/local/mygit/DesignPattern/build"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 DesignPattern/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/st007/local/mygit/DesignPattern/build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/main.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CAbstractFactory.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CAbstractFactory.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CAbstractProductA.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CAbstractProductA.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CAbstractProductB.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CAbstractProductB.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CConcreteFactoryA.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CConcreteFactoryA.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CConcreteFactoryB.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CConcreteFactoryB.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductA1.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductA1.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductA2.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductA2.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductB1.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductB1.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductB2.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/AbstractFactory/CProductB2.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_class/CAdaptee_cla.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_class/CAdaptee_cla.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_class/CAdapter_cla.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_class/CAdapter_cla.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_class/CTarget_cla.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_class/CTarget_cla.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_object/CAdaptee_obj.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_object/CAdaptee_obj.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_object/CAdapter_obj.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_object/CAdapter_obj.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_object/CTarget_obj.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Adapter/Adapter_object/CTarget_obj.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CStack.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CStack.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CTestStacker.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CTestStacker.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/Array/CArrayMemoryAllocate.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/Array/CArrayMemoryAllocate.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/FunctionPointer/CFuncPtr.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/FunctionPointer/CFuncPtr.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/function/CRecures.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/function/CRecures.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/limits/CLimits.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Base_problem/limits/CLimits.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CAbstraction.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CAbstraction.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CAbstractionImp.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CAbstractionImp.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CConcreteAbstractionImpA.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CConcreteAbstractionImpA.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CConcreteAbstractionImpB.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CConcreteAbstractionImpB.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CRefinedAbstraction.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Bridge/CRefinedAbstraction.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CBuilder.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CBuilder.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CConcreteBuilder.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CConcreteBuilder.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CDirector.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CDirector.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CProductBuild.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CProductBuild.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CProductPart.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Builder/CProductPart.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Composite/CComponent_pos.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Composite/CComponent_pos.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Composite/CComposite.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Composite/CComposite.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Composite/CLeaf.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Composite/CLeaf.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CComponent.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CComponent.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CConcreteComponent.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CConcreteComponent.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CConcreteDecorator.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CConcreteDecorator.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CDecorator.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Decorator/CDecorator.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Facade/CFacade.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Facade/CFacade.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Facade/CSubSystemA.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Facade/CSubSystemA.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Facade/CSubSystemB.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Facade/CSubSystemB.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CConcreteFactory.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CConcreteFactory.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CConcreteProduct.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CConcreteProduct.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CFactory.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CFactory.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CProduct.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Factory/CProduct.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CConcreteFlyweight.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CConcreteFlyweight.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CFlyweight.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CFlyweight.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CFlyweightFactory.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CFlyweightFactory.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CUnshareConcreteFlyweight.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Flyweight/CUnshareConcreteFlyweight.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Prototype/CConcreteProtoType.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Prototype/CConcreteProtoType.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Prototype/CPrototype.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Prototype/CPrototype.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Singleton/CSingleton.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/Singleton/CSingleton.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/proxy/CConcreteSubject.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/proxy/CConcreteSubject.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/proxy/CProxy.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/proxy/CProxy.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/proxy/CSubject.cpp">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/src/proxy/CSubject.h">
+			<Option target="DesignPattern"/>
+		</Unit>
+		<Unit filename="/home/st007/local/mygit/DesignPattern/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

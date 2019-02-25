@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CStack.h
+
+/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CTestStacker.cpp
+iostream
+-
+cctype
+-
+CStack.h
+/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CStack.h
+CTestStacker.h
+/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CTestStacker.h
+
+/home/st007/local/mygit/DesignPattern/src/Base_problem/ADT_stack/CTestStacker.h
+

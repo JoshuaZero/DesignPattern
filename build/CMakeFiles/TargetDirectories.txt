@@ -1,0 +1,3 @@
+/home/st007/local/mygit/DesignPattern/build/CMakeFiles/edit_cache.dir
+/home/st007/local/mygit/DesignPattern/build/CMakeFiles/rebuild_cache.dir
+/home/st007/local/mygit/DesignPattern/build/CMakeFiles/DesignPattern.dir
