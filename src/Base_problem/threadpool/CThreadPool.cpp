@@ -1,7 +1,7 @@
 //
 // Created by st007 on 19-3-4.
 //
-
+#include <iostream>
 #include "CThreadPool.h"
 
 CThreadPool::CThreadPool() {
@@ -39,6 +39,12 @@ CThreadPool::~CThreadPool() {
     for(std::thread &worker:m_workers)
         worker.join();
 }
+
+void CThreadPool::func() {
+    std::this_thread::sleep_for(std::chrono::microseconds(100));
+    std::cout << "worker thread ID:" << std::this_thread::get_id() << std::endl;
+}
+
 
 template <class F, class... Args>
 auto CThreadPool::enqueue(F &&f, Args &&... args)->std::future<typename std::result_of<F(Args...)>::type> {

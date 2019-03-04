@@ -51,6 +51,7 @@
 #include "src/Base_problem/FunctionPointer/CFuncPtr.h"
 #include "src/Base_problem/ADT_stack/CTestStacker.h"
 
+#include "src/Base_problem/threadpool/CThreadPool.h"
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -166,10 +167,16 @@ int main() {
     //pfPtr->showRes();
     pfPtr->showArfupt();
     */
-
+/*
     //test the CTestStacker
     CTestStacker *pster = new CTestStacker();
     pster->showStacker();
+    */
+
+    //test the threadpool
+    CThreadPool cthpool(4);
+    auto result = cthpool.enqueue([](int answer) {return answer; }, 42);
+    std::cout << result.get() << std::endl;
 
     return 0;
 }
