@@ -173,10 +173,17 @@ int main() {
     pster->showStacker();
     */
 
+/*
     //test the threadpool
     CThreadPool cthpool(4);
-    auto result = cthpool.enqueue([](int answer) {return answer; }, 42);
-    std::cout << result.get() << std::endl;
+    while(1)
+    //cthpool.func();
+    //auto result = cthpool.enqueue([](int answer) { return answer; }, 42);
+    //std::cout << result.get() << std::endl;
+    */
+
+    //Test the connectpool
+
 
     return 0;
 }
