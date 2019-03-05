@@ -7,8 +7,8 @@
 template <class T>
 CConnectPool<T>::CConnectPool() {
     m_mutex = new pthread_mutex_t;
-    pthread_mutex_init(m_mutex, NULL);
-    srand(NULL);
+    pthread_mutex_init(m_mutex, nullptr);
+    srand(nullptr);
 }
 
 template <class T>

@@ -34,7 +34,8 @@ aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/FunctionPointer APP_FU
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/limits APP_LIMITS)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/threadpool APP_THREADPOOL)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/connnectpool APP_CONNPOOL)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/stringallocmem APP_STRALLOCMEM)
 
 add_executable(DesignPattern main.cpp ${APP_FACTORY} ${APP_ABSTRACTFACT} ${APP_ADAPER} ${APP_BRIDGE} ${APP_BUILDER} ${APP_COMPOSITE}
         ${APP_DECORATOR} ${APP_FACADE} ${APP_FACTORY} ${APP_FLYWEIGHT} ${APP_PROTOTYPE} ${APP_PROXY} ${APP_SINGLETON} ${APP_ADTSTACK}
-        ${APP_ARRAY} ${APP_FUNCTION} ${APP_FUNCPTR} ${APP_LIMITS} ${APP_THREADPOOL} ${APP_CONNPOOL})
+        ${APP_ARRAY} ${APP_FUNCTION} ${APP_FUNCPTR} ${APP_LIMITS} ${APP_THREADPOOL} ${APP_CONNPOOL} ${APP_STRALLOCMEM})
