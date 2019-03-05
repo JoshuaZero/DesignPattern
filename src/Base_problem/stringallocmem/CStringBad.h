@@ -31,7 +31,7 @@ public:
     CStringBad &operator=(const char*);
 
     static int HowMany();
-    static const int CINLIM = 80;
+
 protected:
 
 private:
@@ -40,6 +40,7 @@ private:
     char* strname;
     int length;
     static int num_strings;
+    static const int CINLIM = 80;
 };
 
 
