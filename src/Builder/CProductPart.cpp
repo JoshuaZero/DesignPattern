@@ -13,5 +13,7 @@ CProductPart::~CProductPart() {
 }
 
 CProductPart*CProductPart::BuilderPart() {
+    std::cout << "the BuilderPart" << std::endl;
 
+    return this;
 }
