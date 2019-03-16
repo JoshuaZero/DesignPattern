@@ -53,6 +53,8 @@
 
 #include "src/Base_problem/threadpool/CThreadPool.h"
 
+#include "src/UseFFmpegAPI/use_libavcodec/CUseAvCodec.h"
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
@@ -186,6 +188,7 @@ int main() {
 
 
     //Test the ffmpeg API
-
+//    CUseAvCodec useAvcodec;
+//    useAvcodec.init();
     return 0;
 }

@@ -20,7 +20,6 @@ extern "C"{
 #include "CUseAvCodec.h"
 
 
-
 CUseAvCodec::CUseAvCodec() {
 
 }
@@ -30,13 +29,6 @@ CUseAvCodec::~CUseAvCodec() {
 
 }
 
-void CUseAvCodec::init() {
+void CUseAvCodec::initialize() {
 
-    avcodec_version();
-    avcodec_configuration();
-}
-
-int CUseAvCodec::process() {
-
-    return 0;
 }

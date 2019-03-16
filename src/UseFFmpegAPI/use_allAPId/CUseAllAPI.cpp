@@ -14,5 +14,5 @@ CUseAllAPI::~CUseAllAPI() {
 }
 
 void CUseAllAPI::init() {
-    
+
 }

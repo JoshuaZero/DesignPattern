@@ -97,14 +97,18 @@ aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/limits APP_LIMITS)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/threadpool APP_THREADPOOL)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/connnectpool APP_CONNPOOL)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/stringallocmem APP_STRALLOCMEM)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/exception APP_EXCP)
+
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavcodec APP_USEAVCODEC)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavdevice APP_USEAVDEVICE)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavfilter APP_USEAVFILTER)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavformat APP_USEAVFORMAT)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavutil APP_USEAVUTIL)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavswscale APP_USEAVSWSCALE)
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_allAPId APP_USEFFMPEG)
 
 #use link_libraries or targer_link_libraries to tell the complier which lib to link
+#select one of link_libraries and target_link_libraries
 link_libraries(
     avcodec
     avformat
@@ -115,7 +119,20 @@ link_libraries(
 )
 
 
+
 add_executable(DesignPattern main.cpp ${APP_FACTORY} ${APP_ABSTRACTFACT} ${APP_ADAPER} ${APP_BRIDGE} ${APP_BUILDER} ${APP_COMPOSITE}
         ${APP_DECORATOR} ${APP_FACADE} ${APP_FACTORY} ${APP_FLYWEIGHT} ${APP_PROTOTYPE} ${APP_PROXY} ${APP_SINGLETON} ${APP_ADTSTACK}
         ${APP_ARRAY} ${APP_FUNCTION} ${APP_FUNCPTR} ${APP_LIMITS} ${APP_THREADPOOL} ${APP_CONNPOOL} ${APP_STRALLOCMEM} ${APP_USEAVCODEC}
-        src/UseFFmpegAPI/use_allAPId/CUseAllAPI.cpp src/UseFFmpegAPI/use_allAPId/CUseAllAPI.h)
+        ${APP_EXCP} ${APP_FFMPEG})
+#[[
+target_link_libraries(
+        DesignPattern
+
+        avcodec
+        avformat
+        avutil
+        avfilter
+        swresample
+        swscale
+)
+]]
