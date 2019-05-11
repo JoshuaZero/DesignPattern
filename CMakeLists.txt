@@ -9,7 +9,8 @@ endif ()
 if ("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
     set(CMAKE_CXX_FLAGS  "-pthread -std=c++14 -O3 -g3 -Wall -fmessage-length=0 -fPIC")
 else()
-    set(CMAKE_CXX_FLAGS  "-pthread -std=c++14 -O0 -g3 -Wall -fmessage-length=0 -fPIC")
+    set(CMAKE_CXX_FLAGS  "-pthread -std=c++14 -O0 -g3 -Wall -fmessage-length=0 -fPIC ")
+    #-fno-elide-constructors  不开启返回值优化
 endif ()
 
 #find the ffmpeg include file
@@ -75,6 +76,27 @@ if (AVCODEC_LIB)
     message(STATUS "avcodec library path: ${AVCODEC_LIB_PATH}")
 endif ()
 
+# Find OpenCV, you may need to set OpenCV_DIR variable
+# to the absolute path to the directory containing OpenCVConfig.cmake file
+# via the command line or GUI
+find_package(OpenCV REQUIRED)
+
+# If the package has been found, several variables will
+# be set, you can find the full list with descriptions
+# in the OpenCVConfig.cmake file.
+# Print some message showing some of them
+message(STATUS "    OpenCV library status:")
+message(STATUS "    version: ${OpenCV_VERSION}")
+message(STATUS "    libraries: ${OpenCV_LIBS}")
+message(STATUS "    include path: ${OpenCV_INCLUDE_DIRS}")
+
+if(CMAKE_VERSION VERSION_LESS "2.8.11")
+    # Add OpenCV headers location to your include paths
+    include_directories(${OpenCV_INCLUDE_DIRS})
+endif()
+link_directories(${OpenCV_LIBS})
+
+
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Factory APP_FACTORY)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/AbstractFactory APP_ABSTRACTFACT)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Adaper APP_ADAPER)
@@ -99,6 +121,8 @@ aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/connnectpool APP_CONNP
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/stringallocmem APP_STRALLOCMEM)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/Base_problem/exception APP_EXCP)
 
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseCPP11New APP_CPPNEW)
+
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavcodec APP_USEAVCODEC)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavdevice APP_USEAVDEVICE)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavfilter APP_USEAVFILTER)
@@ -106,6 +130,8 @@ aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavformat APP_US
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavutil APP_USEAVUTIL)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_libavswscale APP_USEAVSWSCALE)
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseFFmpegAPI/use_allAPId APP_USEFFMPEG)
+
+aux_source_directory(${CMAKE_SOURCE_DIR}/src/UseOpenCVAPI APP_USEOPENCV)
 
 #use link_libraries or targer_link_libraries to tell the complier which lib to link
 #select one of link_libraries and target_link_libraries
@@ -116,6 +142,13 @@ link_libraries(
     avfilter
     swresample
     swscale
+    opencv_core
+    opencv_highgui
+    opencv_video
+    opencv_videoio
+    opencv_highgui
+    opencv_imgproc
+    opencv_imgcodecs
 )
 
 
@@ -123,7 +156,7 @@ link_libraries(
 add_executable(DesignPattern main.cpp ${APP_FACTORY} ${APP_ABSTRACTFACT} ${APP_ADAPER} ${APP_BRIDGE} ${APP_BUILDER} ${APP_COMPOSITE}
         ${APP_DECORATOR} ${APP_FACADE} ${APP_FACTORY} ${APP_FLYWEIGHT} ${APP_PROTOTYPE} ${APP_PROXY} ${APP_SINGLETON} ${APP_ADTSTACK}
         ${APP_ARRAY} ${APP_FUNCTION} ${APP_FUNCPTR} ${APP_LIMITS} ${APP_THREADPOOL} ${APP_CONNPOOL} ${APP_STRALLOCMEM} ${APP_USEAVCODEC}
-        ${APP_EXCP} ${APP_FFMPEG})
+        ${APP_EXCP} ${APP_FFMPEG} ${APP_CPPNEW} ${APP_USEOPENCV} src/Base_problem/Trace/CTrace.cpp src/Base_problem/Trace/CTrace.h)
 #[[
 target_link_libraries(
         DesignPattern
