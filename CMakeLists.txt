@@ -156,7 +156,7 @@ link_libraries(
 add_executable(DesignPattern main.cpp ${APP_FACTORY} ${APP_ABSTRACTFACT} ${APP_ADAPER} ${APP_BRIDGE} ${APP_BUILDER} ${APP_COMPOSITE}
         ${APP_DECORATOR} ${APP_FACADE} ${APP_FACTORY} ${APP_FLYWEIGHT} ${APP_PROTOTYPE} ${APP_PROXY} ${APP_SINGLETON} ${APP_ADTSTACK}
         ${APP_ARRAY} ${APP_FUNCTION} ${APP_FUNCPTR} ${APP_LIMITS} ${APP_THREADPOOL} ${APP_CONNPOOL} ${APP_STRALLOCMEM} ${APP_USEAVCODEC}
-        ${APP_EXCP} ${APP_FFMPEG} ${APP_CPPNEW} ${APP_USEOPENCV} src/Base_problem/Trace/CTrace.cpp src/Base_problem/Trace/CTrace.h)
+        ${APP_EXCP} ${APP_FFMPEG} ${APP_CPPNEW} ${APP_USEOPENCV} src/Base_problem/Trace/CTrace.cpp src/Base_problem/Trace/CTrace.h src/Base_problem/ADT_stack/CKVMemOpt.cpp src/Base_problem/ADT_stack/CKVMemOpt.h)
 #[[
 target_link_libraries(
         DesignPattern

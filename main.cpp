@@ -1,4 +1,6 @@
 #include <iostream>
+#include <list>
+#include <ctime>
 #include "./src/Factory/CProduct.h"
 #include "./src/Factory/CFactory.h"
 #include "./src/Factory/CConcreteProduct.h"
@@ -59,10 +61,81 @@
 #include "src/UseOpenCVAPI/UseVideoCapture.h"
 
 
+int findnextString(const std::vector<std::vector<std::string>>::iterator& inVecIter, std::vector<std::vector<std::string>>& vec, std::vector<std::vector<std::string>>::iterator& outVecIter)
+{
+    vec.erase(inVecIter);
+    std::vector<std::vector<std::string>>::iterator iter = vec.begin();
+    for (;iter != vec.end(); iter++)
+    {
+        if((*iter)[0] == (*inVecIter)[0] || (*iter)[0] == (*inVecIter)[1] || (*iter)[1] == (*inVecIter)[0] || (*iter)[1] == (*inVecIter)[1])
+        {
+            outVecIter = iter;
+            return 1;
+        }
 
+    }
+    std::cout << "there is no aviable data! it connot combine one line" << std::endl;
+    return 0;
+}
+
+void SplitString(const std::string& strin, std::vector<std::string>& vec, const std::string& strsplit)
+{
+    std::string::size_type pos1, pos2;
+    pos2 = strin.find(strsplit);
+    pos1 = 0;
+    while(std::string::npos != pos2)
+    {
+        vec.push_back(strin.substr(pos1, pos2-pos1));
+
+        pos1 = pos2 + strsplit.size();
+        pos2 = strin.find(strsplit, pos1);
+    }
+    if(pos1 != strin.length())
+        vec.push_back(strin.substr(pos1));
+}
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
+
+    /*
+    time_t  curTime;
+    curTime = time(NULL);
+    std::cout << curTime << std::endl;
+     */
+    /*
+
+    std::string s;
+    std::vector<std::string> vecstr;
+    std::vector<std::vector<std::string>> vecInstr;
+    std::vector<std::vector<std::string>> vecback;
+    int n;
+    std::cin >> n;
+    std::cin.ignore();
+    for(int i = 0; i < n; ++i){
+        getline(std::cin, s);
+        SplitString(s, vecstr, " ");
+        vecInstr.push_back(vecstr);
+        vecback.push_back(vecstr);
+        vecstr.clear();
+        //std::cout << s << std::endl;
+    }
+
+    std::list<std::vector<std::string>> liststr;
+    std::vector<std::vector<std::string>>::iterator iter = vecInstr.begin();
+    std::vector<std::vector<std::string>>::iterator inVeciter = vecInstr.begin();
+    std::vector<std::vector<std::string>>::iterator outVeciter;
+    liststr.push_back(*vecInstr.begin());
+    while(outVeciter!= vecInstr.end()-1){
+        int flg = findnextString(inVeciter, vecInstr, outVeciter);
+        if(!flg)
+            break;
+        inVeciter = outVeciter;
+        liststr.push_back(*outVeciter);
+    }*/
+
+
+
+
 
 /*
     //Test the Factory pattern
