@@ -5,6 +5,25 @@
 #ifndef DESIGNPATTERN_CRECURES_H
 #define DESIGNPATTERN_CRECURES_H
 
+#include <iostream>
+
+struct A{};
+struct B{};
+
+template<typename T = A>
+struct X;
+
+template <>
+struct X<A>{
+    static void f(){std::cout << 1 << std::endl;}
+};
+template <>
+struct X<B>{
+    static void f(){std::cout << 2 << std::endl;}
+};
+template<template <typename T = B> class C>
+void g(){C<>::f();}
+
 
 class CRecures {
 public:
@@ -16,6 +35,10 @@ public:
     void showRes();
     void countdown(int n);
     void subdivide(char ar[], int low, int high, int level);
+
+
+
+
 protected:
 
 private:

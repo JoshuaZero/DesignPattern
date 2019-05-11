@@ -55,6 +55,12 @@
 
 #include "src/UseFFmpegAPI/use_libavcodec/CUseAvCodec.h"
 
+#include "src/UseCPP11New/CUseNewCPP.h"
+#include "src/UseOpenCVAPI/UseVideoCapture.h"
+
+
+
+
 int main() {
     std::cout << "Hello, World!" << std::endl;
 
@@ -162,6 +168,7 @@ int main() {
     CRecures* pRecus = new CRecures();
     pRecus->countdown(7);
     pRecus->showRes();
+    g<X>();
     */
 /*
     //test the function pointer
@@ -186,9 +193,25 @@ int main() {
 
     //Test the connectpool
 
+/*
+    //test c++11
+    CUseNewCPP temp;
+    //CUseNewCPP A = CUseNewCPP(temp);
+    //比上面少一次构造和析构
+    CUseNewCPP && aa = CUseNewCPP(temp);
+    */
+//    CUseNewCPP && tempa = getCUserCPPInstance();
 
     //Test the ffmpeg API
 //    CUseAvCodec useAvcodec;
 //    useAvcodec.init();
+
+
+    //Test the opencv API
+   // UseVideoCapture videocap;
+   // videocap.openVideo();
+
+
+
     return 0;
 }
