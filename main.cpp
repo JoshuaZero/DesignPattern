@@ -132,10 +132,7 @@ int main() {
         inVeciter = outVeciter;
         liststr.push_back(*outVeciter);
     }*/
-
-
-
-
+    
 
 /*
     //Test the Factory pattern

@@ -12,6 +12,8 @@ public:
     ~CUseAllAPI();
 
     void init();
+    void printfLog();
+    bool printMetaInfo();
 protected:
 
 private:
