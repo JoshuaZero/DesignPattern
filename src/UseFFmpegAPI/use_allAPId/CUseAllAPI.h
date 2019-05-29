@@ -14,6 +14,7 @@ public:
     void init();
     void printfLog();
     bool printMetaInfo();
+    bool getaudioData(std::string src, std::string dst);
 protected:
 
 private:
