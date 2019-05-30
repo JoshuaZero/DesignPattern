@@ -33,7 +33,7 @@ void CUseAllAPI::printfLog() {
     av_log(NULL, AV_LOG_INFO, "helloworld!!");
 }
 
-bool CUseAllAPI::printMetaInfo() {
+int CUseAllAPI::printMetaInfo() {
     int ret;
     AVFormatContext * fmt_ctx = NULL;
     av_log_set_level(AV_LOG_INFO);
@@ -52,7 +52,7 @@ bool CUseAllAPI::printMetaInfo() {
     return 0;
 }
 
-bool CUseAllAPI::getaudioData(std::string src, std::string dst) {
+int CUseAllAPI::getaudioData(std::string src, std::string dst) {
     //1. read two params form console
     int ret;
     int audio_index;
@@ -112,7 +112,7 @@ bool CUseAllAPI::getaudioData(std::string src, std::string dst) {
     return 0;
 }
 
-bool CUseAllAPI::getvideoData(std::string src, std::string dst) {
+int CUseAllAPI::getvideoData(std::string src, std::string dst) {
     int err_code;
     char  errors[1024];
     FILE * dst_fd = NULL;
@@ -193,7 +193,7 @@ bool CUseAllAPI::getvideoData(std::string src, std::string dst) {
     return 0;
 }
 
-bool CUseAllAPI::transMP42FLV(std::string infile, std::string outfile) {
+int CUseAllAPI::transMP42FLV(std::string infile, std::string outfile) {
     AVOutputFormat * ofmt = NULL;
     AVFormatContext * ifmt_ctx = NULL, *ofmt_ctx = NULL;
     AVPacket pkt;
@@ -321,6 +321,154 @@ bool CUseAllAPI::transMP42FLV(std::string infile, std::string outfile) {
     avformat_free_context(ofmt_ctx);
 
     av_freep(&stream_mapping);
+
+    if(ret < 0 && ret != AVERROR_EOF){
+        fprintf(stderr, "Error occurred: %s \n", av_err2str(ret));
+        return  1;
+    }
+
+    return 0;
+}
+
+int CUseAllAPI::cropvideo(double starttime, double endtime, const std::string infile, const std::string outfile) {
+    AVOutputFormat * ofmt = NULL;
+    AVFormatContext * ifmt_ctx = NULL *ofmt_ctx = NULL;
+    AVPacket pkt;
+    int ret, i;
+
+    //av_register_all();
+
+    if((ret = avformat_open_input(&ifmt_ctx, infile, 0, 0)) < =){
+        fprintf(stderr, "Could not open input file '%s'", infile);
+        goto end;
+    }
+
+    if((ret == avformat_find_stream_info(&ifmt_ctx, 0)) < 0){
+        fprintf(stderr, "Failed to retrieve input stream information");
+        goto end;
+    }
+
+    av_dump_format(ifmt_ctx, 0, infile, 0);
+
+    avformat_alloc_context(&ofmt_ctx, 0, infile, 0);
+    if(!ofmt_ctx){
+        fprintf(stderr, "Could not create output context \n");
+        ret = AVERROR_UNKNOWN;
+        goto end;
+    }
+
+    ofmt = ofmt_ctx->oformat;
+
+    for(i = 0; i < ifmt_ctx->nb_streams; ++i){
+        AVStream * instream = ifmt_ctx->streams[i];
+        AVStream * outstream = avformat_new_stream(ofmt_ctx, instream->codec->codec);
+        if(!outstream){
+            fprintf(stderr, "Failed allocating output stream\n");
+            ret = AVERROR_UNKNOWN;
+            goto end;
+        }
+
+        ret = avcodec_copy_context(outstream->codec, instream->codec);
+        if(ret < 0){
+            fprintf(stderr, "Failed ot copy context from input to output stream codec context \n");
+            goto end;
+        }
+        out_stream->codec->codec_tag = 0;
+        if(ofmt->oformat->flags & AVFMT_GLOBALHEADER)
+            outstream->codec->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+    }
+
+    av_dump_format(ofmt_ctx, 0, outfile, 1);
+
+    if(!(ofmt->flags & AVFMT_NOFILE)){
+        ret = avio_open(&ofmt_ctx->pb, outfile, AVIO_FLAG_WRITE);
+        if(ret < 0){
+            fprintf(stderr, "Could not open output file '%s'", outfile);
+            goto end;
+        }
+    }
+
+    ret = avformat_write_header(ofmt_ctx, NULL);
+    if(ret < 0){
+        fprintf(stderr, "Error occurred whern opening output file\n");
+        goto end;
+    }
+
+    ret = av_seek_frame(ifmt_ctx, -1, starttime*AV_TIME_BASE, AVSEEK_FLAG_ANY);
+    if(ret < 0){
+        fprintf(stderr, "Error seek\n");
+        goto end;
+    }
+
+    int64_t * dts_start_from = malloc(sizeof(int64_t) * ifmt_ctx->nb_streams);
+    memset(dts_start_from, 0, sizeof(int64_t)*ifmt_ctx->nb_streams);
+
+    int64_t * pts_start_from = malloc(sizeof(int64_t) * ifmt_ctx->nb_streams);
+    memset(pts_start_from, 0, sizeof(int64_t)*ifmt_ctx->nb_streams);
+
+    while(1){
+        AVStream * instream, *outstream;
+        ret = av_read_frame(ifmt_ctx, &pkt);
+        if(ret < 0){
+            break;
+        }
+
+        instream = ifmt_ctx->streams[pkt.stream_index];
+        outstream = ofmt_ctx->streams[pkt.stream_index];
+
+        log_packet(ifmt_ctx, &pkt, "in");
+
+        if(av_q2d(instream->time_base)*pkt.pts > endtime){
+            av_free_packet(&pkt);
+            break;
+        }
+
+        if(dts_start_from[pkt.stream_index] == 0){
+            dts_start_from[pkt.stream_index] = pkt.dts;
+            printf("dts_start_from:&s\n", av_ts2str(dts_start_from[pkt.stream_index]));
+        }
+
+        if(pts_start_from[pkt.stream_index] == 0){
+            pts_start_from[pkt.stream_index] = pkt.dts;
+            printf("pts_start_from:&s\n", av_ts2str(pts_start_from[pkt.stream_index]));
+        }
+
+        //copy packet
+        pkt.pts = av_rescale_q_rnd(pkt.pts, instream->time_base, outstream->time_base, AV_ROUND_NEAR_INF||AV_ROUND_PASS_MINMAX);
+        pkt.dts = av_rescale_q_rnd(pkt.dts, instream->time_base, outstream->time_base, AV_ROUND_NEAR_INF||AV_ROUND_PASS_MINMAX);
+        if(pkt.pts < 0){
+            pkt.pts = 0;
+        }
+        if(pkt.dts < 0){
+            pkt.dts = 0;
+        }
+
+        pkt.duration = (int)av_rescale_q((int64_t)pkt.duration, instream->time_base, outstream->time_base);
+
+        pkt.pos = -1;
+        log_packet(ofmt_ctx, &pkt, "out");
+        printf("\n");
+        ret = av_interleaved_write_frame(ofmt_ctx, &pkt);
+        if(ret < 0){
+            fprintf(stderr, "Error muxing packet \n");
+            break;
+        }
+
+        av_free_packet(&pkt);
+    }
+    free(dts_start_from);
+    free(pts_start_from);
+    av_write_trailer(ofmt_ctx);
+
+ end:
+    avformat_close_input(&ifmt_ctx);
+
+    //close output
+    if(ofmt_ctx && !(ofmt->flags & AVFMT_NOFILE)){
+        avio_closep(&ofmt_ctx->pb);
+    }
+    avformat_free_context(ofmt_ctx);
+
 
     if(ret < 0 && ret != AVERROR_EOF){
         fprintf(stderr, "Error occurred: %s \n", av_err2str(ret));

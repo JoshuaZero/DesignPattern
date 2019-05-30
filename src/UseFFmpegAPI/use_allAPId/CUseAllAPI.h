@@ -13,11 +13,11 @@ public:
 
     void init();
     void printfLog();
-    bool printMetaInfo();
-    bool getaudioData(std::string src, std::string dst);
-    bool getvideoData(std::string src, std::string dst);
-    bool transMP42FLV(std::string infile, std::string outfile);
-
+    int printMetaInfo();
+    int getaudioData(std::string src, std::string dst);
+    int getvideoData(std::string src, std::string dst);
+    int transMP42FLV(std::string infile, std::string outfile);
+    int cropvideo(double starttime, double endtime, const std::string infile, const std::string outfile);
 protected:
 
 private:
