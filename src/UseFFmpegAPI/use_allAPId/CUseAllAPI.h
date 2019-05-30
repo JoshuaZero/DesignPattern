@@ -15,6 +15,9 @@ public:
     void printfLog();
     bool printMetaInfo();
     bool getaudioData(std::string src, std::string dst);
+    bool getvideoData(std::string src, std::string dst);
+    bool transMP42FLV(std::string infile, std::string outfile);
+
 protected:
 
 private:
